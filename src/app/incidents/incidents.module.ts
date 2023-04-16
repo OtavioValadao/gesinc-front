@@ -5,7 +5,8 @@ import { IncidentsRoutingModule } from './incidents-routing.module';
 
 
 @NgModule({
-  declarations: [],
+  declarations: [
+  ],
   imports: [
     CommonModule,
     IncidentsRoutingModule
