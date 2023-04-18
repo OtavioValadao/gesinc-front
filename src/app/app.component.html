@@ -5,4 +5,25 @@
     </div>
   </main>
 </div> -->
-<router-outlet></router-outlet>
+
+<mat-toolbar [hidden]="true">
+  <mat-toolbar-row>
+    <button style="color: aliceblue;" mat-button (click)="drawer.toggle()" ><mat-icon>menu</mat-icon></button>
+    <a routerLink=""><h4 style="color: aliceblue;">GESINC</h4></a>
+  </mat-toolbar-row>
+</mat-toolbar>
+<mat-sidenav-container>
+  <mat-sidenav [hidden]="true" #drawer [(opened)]="opened">
+  <mat-list dense>
+      <mat-list-item *ngFor="let item of items">
+          <a routerLink="">{{item.name}}</a>
+      </mat-list-item>
+  </mat-list>
+  </mat-sidenav>
+  <mat-sidenav-content>
+    <router-outlet></router-outlet>
+  </mat-sidenav-content>
+</mat-sidenav-container>
+
+<!-- Body
+     -->

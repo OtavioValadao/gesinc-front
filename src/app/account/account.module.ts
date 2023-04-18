@@ -8,6 +8,7 @@ import { LoginComponent } from './login/login.component';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { MatFormFieldModule } from '@angular/material/form-field';
 import { MaterialModule } from 'src/material.module';
+import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
 
 
 @NgModule({
@@ -21,6 +22,7 @@ import { MaterialModule } from 'src/material.module';
     ReactiveFormsModule,
     FormsModule,
     MaterialModule,
+    FontAwesomeModule
   ],
   exports:[
     LoginComponent,

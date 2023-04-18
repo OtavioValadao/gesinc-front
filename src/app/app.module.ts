@@ -13,6 +13,7 @@ import { AppComponent } from './app.component';
 import { IncidentsRoutingModule } from './incidents/incidents-routing.module';
 import { NavigationRoutingModule } from './navigation/navigation-routing.module';
 import { AccountModule } from './account/account.module';
+import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
 
 @NgModule({
   declarations: [
@@ -31,6 +32,7 @@ import { AccountModule } from './account/account.module';
     HttpClientModule,
     MaterialModule,
     ReactiveFormsModule,
+    FontAwesomeModule,
   ],
   exports: [
     NgxPermissionsModule
