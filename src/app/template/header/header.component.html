@@ -1,0 +1,63 @@
+<div class="card">
+  <p-toolbar>
+    <!-- Icone direito side bar -->
+    <div class="p-toolbar-group-start">
+      <p-button icon="pi pi-arrow-circle-right" (click)="sidebarVisible = true"
+        styleClass="p-button-rounded p-button-secondary p-button-text p-button-raised"></p-button>
+    </div>
+    <!-- FIM Icone direito side bar -->
+    <!-- Icone lado esquerdo usuario -->
+    <div class="p-toolbar-group-end">
+      <p-button icon="pi pi-user" (click)="showDialog()"
+        styleClass="shadow-8 p-button-rounded p-button-info p-button-text p-button-raised"></p-button>
+
+      <!-- Icones config usuario -->
+      <p-dialog header="Configuração" [(visible)]="visible" [modal]="true" [draggable]="false" [resizable]="false">
+        <div class="flex justify-content-around flex-wrap card-container">
+          <div class="flex align-items-center justify-content-center">
+            <p-button icon="pi pi-refresh"
+              styleClass=" p-button-rounded p-button-info p-button-text p-button-raised"></p-button>
+          </div>
+          <div class="flex align-items-center justify-content-center">
+            <p-button icon="pi pi-refresh"
+              styleClass=" p-button-rounded p-button-info p-button-text p-button-raised"></p-button>
+          </div>
+        </div>
+      </p-dialog>
+      <!-- FIM Icones config usuario -->
+    </div>
+    <!-- FIM Icone lado esquerdo usuario -->
+  </p-toolbar>
+</div>
+
+<p-sidebar [(visible)]="sidebarVisible" class="flex justify-content-center">
+  <ng-template pTemplate="header">
+    <div class="flex justify-content-around flex-wrap card-container indigo-container">
+      <div class="flex align-items-center justify-content-center w-4rem h-4rem font-bold text-black border-round m-2">
+        GESINC</div>
+      <div class="flex align-items-center justify-content-center w-4rem h-4rem text-white border-round m-2"></div>
+      <div class="flex align-items-center justify-content-center w-4rem h-4rem font-bold text-black border-round m-2">
+        <i class="pi pi-spin pi-cog" style="font-size: 1.5rem"></i>
+
+      </div>
+    </div>
+
+  </ng-template>
+
+
+  <!--Acrescentar método para menus na aba lateral-->
+  <ng-template pTemplate="content">
+    <div class="card flex justify-content-center">
+      <p-panelMenu [model]="items" [style]="{'width':'300px'}"></p-panelMenu>
+    </div>
+  </ng-template>
+
+
+  <ng-template pTemplate="footer">
+    <p-divider></p-divider>
+
+  </ng-template>
+</p-sidebar>
+<footer class="layout-footer">
+  <app-footer></app-footer>
+</footer>

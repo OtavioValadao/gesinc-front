@@ -1,0 +1,19 @@
+.p-dialog .p-dialog-content {
+  padding: 1rem 0;
+}
+.p-dialog {
+  width: 40vh;
+}
+@media (max-width: 320px)
+{
+  .p-dialog
+   {
+    width: 30vh;
+   }
+}
+.layout-footer {
+  position: fixed;
+  width: 100%;
+  bottom: 0;
+  height: 50px;
+}

@@ -1,8 +1,12 @@
-import { NgModule } from '@angular/core';
+import { CUSTOM_ELEMENTS_SCHEMA, NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
+import { NavigationRoutingModule } from './navigation/navigation-routing.module';
+
+import { NgPrime } from 'src/app/shared/NgPrimeImports/prime.module';
+import { TemplateModule } from './template/template.module';
 
 @NgModule({
   declarations: [
@@ -10,8 +14,12 @@ import { AppComponent } from './app.component';
   ],
   imports: [
     BrowserModule,
-    AppRoutingModule
+    AppRoutingModule,
+    NavigationRoutingModule,
+    NgPrime,
+    TemplateModule
   ],
+  schemas: [CUSTOM_ELEMENTS_SCHEMA],
   providers: [],
   bootstrap: [AppComponent]
 })
