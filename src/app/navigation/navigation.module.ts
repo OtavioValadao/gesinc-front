@@ -1,12 +1,10 @@
+import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
-import { CUSTOM_ELEMENTS_SCHEMA, NgModule } from '@angular/core';
 
-import { DashboardComponent } from './dashboard/dashboard.component';
 import { NavigationRoutingModule } from './navigation-routing.module';
-
-import { BrowserModule } from '@angular/platform-browser';
-import { ChartModule } from 'primeng/chart';
 import { NgPrime } from '../shared/NgPrimeImports/prime.module';
+import { DashboardComponent } from './dashboard/dashboard.component';
+
 
 @NgModule({
   declarations: [
@@ -15,10 +13,10 @@ import { NgPrime } from '../shared/NgPrimeImports/prime.module';
   imports: [
     CommonModule,
     NavigationRoutingModule,
-    BrowserModule,
-    NgPrime,
-    ChartModule
+    NgPrime
   ],
-  schemas: [CUSTOM_ELEMENTS_SCHEMA],
+  exports:[
+    DashboardComponent
+  ]
 })
 export class NavigationModule { }
