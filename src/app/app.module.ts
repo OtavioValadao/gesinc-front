@@ -7,6 +7,8 @@ import { AppComponent } from './app.component';
 import { NgPrime } from 'src/app/shared/NgPrimeImports/prime.module';
 import { TemplateModule } from './template/template.module';
 import { NavigationModule } from './navigation/navigation.module';
+import { AccountModule } from './account/account.module';
+import { HttpClientModule } from '@angular/common/http'
 
 @NgModule({
   declarations: [
@@ -15,9 +17,12 @@ import { NavigationModule } from './navigation/navigation.module';
   imports: [
     BrowserModule,
     AppRoutingModule,
+    HttpClientModule,
     NgPrime,
     TemplateModule,
-    NavigationModule
+    NavigationModule,
+    AccountModule,
+
   ],
   schemas: [CUSTOM_ELEMENTS_SCHEMA],
   providers: [],

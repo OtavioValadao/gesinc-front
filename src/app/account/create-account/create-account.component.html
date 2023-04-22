@@ -1,0 +1,126 @@
+<form (ngSubmit)="createAccount()" [formGroup]="createAccountForm">
+
+  <div class="card" *ngIf="success">
+    <p-messages [(value)]="messages" [showTransitionOptions]="'500ms'" [hideTransitionOptions]="'500ms'"
+      [enableService]="false"></p-messages>
+  </div>
+
+  <div class="card flex justify-content-center mt-8">
+
+    <div class="card">
+      <div class="card-container">
+        <div class="flex align-items-center justify-content-center">
+          <h2>Crie sua conta</h2>
+        </div>
+
+        <!-- Nome completo do usuario -->
+        <div class="flex align-items-center justify-content-center">
+          <span class="p-inputgroup-addon ">
+            <i class="pi pi-user"></i>
+          </span>
+          <input pInputText placeholder="Nome Completo" formControlName="name">
+        </div>
+
+        <div class="flex align-items-center justify-content-center">
+          <span class="text-red-500" *ngIf="displayMessage?.['fullName']">
+            <p [innerHTML]="displayMessage['fullName']"></p>
+          </span>
+        </div>
+
+        <div class="flex align-items-center justify-content-center">
+          <p-divider></p-divider>
+        </div>
+
+        <!-- Nome do usuario -->
+        <div class="flex-initial flex align-items-center justify-content-center">
+          <span class="p-inputgroup-addon ">
+            <i class="pi pi-user-plus"></i>
+          </span>
+          <input pInputText placeholder="Usuario" formControlName="username" />
+        </div>
+
+        <div class="flex align-items-center justify-content-center">
+          <span class="text-red-500" *ngIf="displayMessage?.['userName']">
+            <p [innerHTML]="displayMessage['userName']"></p>
+          </span>
+        </div>
+
+        <div class="flex align-items-center justify-content-center">
+          <p-divider></p-divider>
+        </div>
+
+        <!-- Email do usuario -->
+        <div class="flex align-items-center justify-content-center">
+          <span class="p-inputgroup-addon ">
+            <i class="pi pi-envelope"></i>
+          </span>
+          <input type="email" pInputText placeholder="Email" formControlName="email" />
+
+        </div>
+        <div class="flex align-items-center justify-content-center">
+          <span class="text-red-500" *ngIf="displayMessage?.['email']">
+            <p [innerHTML]="displayMessage['email']"></p>
+          </span>
+        </div>
+
+
+        <div class="flex align-items-center justify-content-center">
+          <p-divider></p-divider>
+        </div>
+
+        <!-- Senha do usuario -->
+
+        <div class="flex align-items-center justify-content-center">
+          <span class="p-inputgroup-addon">
+            <i class="pi pi-lock"></i>
+          </span>
+          <p-password placeholder="Digite sua senha" formControlName="password" [toggleMask]="true">
+            <ng-template pTemplate="footer">
+              <p-divider></p-divider>
+              <p class="mt-2">Sugestões</p>
+              <ul class="pl-2 ml-2 mt-0" style="line-height: 1.5">
+                <li>Pelo menos uma minúscula</li>
+                <li>Pelo menos uma maiúscula</li>
+                <li>Pelo menos um numero</li>
+                <li>Minimo 8 caracteres</li>
+              </ul>
+            </ng-template>
+          </p-password>
+        </div>
+        <div class="flex align-items-center justify-content-center">
+          <span class="text-red-500" *ngIf="displayMessage?.['password']">
+            <p [innerHTML]="displayMessage['password']"></p>
+          </span>
+        </div>
+
+        <div class="flex align-items-center justify-content-center">
+          <p-divider></p-divider>
+        </div>
+
+        <!-- Confirmação de senha do usuario -->
+        <div class="flex align-items-center justify-content-center">
+          <span class="p-inputgroup-addon">
+            <i class="pi pi-lock"></i>
+          </span>
+          <p-password placeholder="Repita sua senha" formControlName="confirmPassword" [toggleMask]="true">
+          </p-password>
+        </div>
+        <div class="flex align-items-center justify-content-center">
+          <span class="text-red-500" *ngIf="displayMessage?.['confirmPassword']">
+            <p [innerHTML]="displayMessage['confirmPassword']"></p>
+          </span>
+        </div>
+
+        <div class="flex align-items-center justify-content-center">
+          <p-divider></p-divider>
+        </div>
+
+        <div class="flex justify-content-center flex-wrap">
+          <p-button type="submit" label="Criar conta" styleClass="p-button-rounded p-button-secondary"
+            icon="pi pi-send"></p-button>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</form>

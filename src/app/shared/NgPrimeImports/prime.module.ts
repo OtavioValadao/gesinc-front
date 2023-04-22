@@ -89,6 +89,7 @@ import { BlockUIModule } from 'primeng/blockui';
 import { ProgressSpinnerModule } from 'primeng/progressspinner';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { MessageService } from 'primeng/api/messageservice';
+import { CustomFormsModule } from 'ngx-custom-validators';
 
 @NgModule({
   exports: [
@@ -180,7 +181,6 @@ import { MessageService } from 'primeng/api/messageservice';
     TreeTableModule,
     AnimateModule,
     CardModule,
-
   ],
 })
 export class NgPrime { }

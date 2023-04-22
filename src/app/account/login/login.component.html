@@ -1,0 +1,41 @@
+<form (ngSubmit)="login()" [formGroup]="loginForm">
+
+  <div class="card flex justify-content-center mt-8">
+
+    <div class="card">
+      <div class="card-container">
+        <div class="flex align-items-center justify-content-center">
+          <h2>LOGIN</h2>
+        </div>
+
+        <!-- Nome completo do usuario -->
+        <div class="flex align-items-center justify-content-center">
+          <span class="p-inputgroup-addon ">
+            <i class="pi pi-user"></i>
+          </span>
+          <input pInputText placeholder="Usuario" formControlName="username">
+        </div>
+
+        <div class="flex align-items-center justify-content-center">
+          <p-divider></p-divider>
+        </div>
+
+        <div class="flex align-items-center justify-content-center">
+          <span class="p-inputgroup-addon">
+            <i class="pi pi-lock"></i>
+          </span>
+          <p-password placeholder="Senha" formControlName="password" [toggleMask]="true">
+          </p-password>
+        </div>
+        <div class="flex align-items-center justify-content-center">
+          <p-divider></p-divider>
+        </div>
+
+        <div class="flex justify-content-center flex-wrap">
+          <p-button type="submit" label="login" styleClass="p-button-rounded p-button-secondary"
+            icon="pi pi-send"></p-button>
+        </div>
+      </div>
+    </div>
+  </div>
+<form>
