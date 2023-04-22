@@ -1,22 +1,22 @@
 import { Injectable } from '@angular/core';
 import { BaseSerivce } from '../baseSerivce/base-serivce.service';
-import { User } from '../../interfaces/user';
-import { Observable, catchError, map } from 'rxjs';
 import { HttpClient } from '@angular/common/http';
+import { Observable, catchError, map } from 'rxjs';
+import { User } from '../../interfaces/user';
 
 @Injectable({
   providedIn: 'root'
 })
-export class AccountSerivce extends BaseSerivce {
+export class AuthService extends BaseSerivce {
 
   constructor(private http: HttpClient) {
     super();
   }
 
-  registerUser(user: User): Observable<User> {
+  loginUser(user: User): Observable<User> {
+    //dispara o endpoint com o corpo e o header
     let response = this.http
-      //dispara o endpoint com o corpo e o header
-      .post(`${this.UrlService}/user`, user, this.cahtHeaderJson())
+      .post(`${this.UrlService}/login`, user, this.cahtHeaderJson())
       .pipe(
         //map para pegar o token
         map(this.extractData),

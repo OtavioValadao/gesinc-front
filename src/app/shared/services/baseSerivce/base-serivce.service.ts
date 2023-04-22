@@ -2,14 +2,14 @@ import { HttpClient, HttpErrorResponse, HttpHeaders } from '@angular/common/http
 import { Inject, Injectable } from '@angular/core';
 import { throwError } from 'rxjs';
 import { LocalStorageUtils } from '../../utils/localstorage';
+import { environment } from 'src/environments/environment.development';
 
 @Injectable({
   providedIn: 'root'
 })
 export abstract class BaseSerivce {
 
-  //protected UrlService: string = "http://localhost:8080/api/v1/auth/register";
-  protected UrlService: string = "http://localhost:8080/user";
+  protected UrlService: string = environment.api;
   public LocalStorage = new LocalStorageUtils();
 
   constructor() { }

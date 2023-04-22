@@ -5,9 +5,17 @@ export class LocalStorageUtils {
   }
 
   public salvarDadosLocaisUsuario(response: any) {
-    this.salvarTokenUsuario(response.token);
-    this.salvarPermissoes(response.roles)
-    this.salvarUsuario(response.name);
+    console.log(response.user)
+    if(response.user){
+      this.salvarTokenUsuario(response.token);
+      this.salvarPermissoes(response.user.roles)
+      this.salvarUsuario(response.user.name);
+    }else{
+
+      this.salvarTokenUsuario(response.token);
+      this.salvarPermissoes(response.roles)
+      this.salvarUsuario(response.name);
+    }
   }
 
   public limparDadosLocaisUsuario() {
@@ -25,10 +33,12 @@ export class LocalStorageUtils {
   }
 
   public salvarUsuario(user: string) {
+    console.log("user",user)
     localStorage.setItem('user_gesinc', JSON.stringify(user));
   }
 
   public salvarPermissoes(roles: string) {
+    console.log("roles",roles)
     localStorage.setItem('roles_gesinc', JSON.stringify(roles));
   }
 
