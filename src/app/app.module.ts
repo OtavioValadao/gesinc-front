@@ -20,9 +20,6 @@ import { HttpClientModule } from '@angular/common/http'
     HttpClientModule,
     NgPrime,
     TemplateModule,
-    NavigationModule,
-    AccountModule,
-
   ],
   schemas: [CUSTOM_ELEMENTS_SCHEMA],
   providers: [],

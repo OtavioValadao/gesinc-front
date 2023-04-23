@@ -1,23 +1,25 @@
-import { CUSTOM_ELEMENTS_SCHEMA, NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
+import { CUSTOM_ELEMENTS_SCHEMA, NgModule } from '@angular/core';
 
-import { HeaderComponent } from './header/header.component';
-import { FooterComponent } from './footer/footer.component';
 import { NgPrime } from '../shared/NgPrimeImports/prime.module';
+import { FooterComponent } from './footer/footer.component';
+import { HeaderComponent } from './header/header.component';
 
 
 @NgModule({
   declarations: [
     HeaderComponent,
-    FooterComponent
+    FooterComponent,
+
   ],
   imports: [
     CommonModule,
     NgPrime
   ],
-  exports:[
+  exports: [
     HeaderComponent,
-    FooterComponent
+    FooterComponent,
+
   ],
   schemas: [CUSTOM_ELEMENTS_SCHEMA],
 })

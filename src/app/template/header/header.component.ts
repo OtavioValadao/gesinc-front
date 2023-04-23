@@ -21,6 +21,7 @@ export class HeaderComponent implements OnInit {
   }
 
   ngOnInit(): void {
+
     this.items = [
       {
         label: 'Dashboard',
@@ -29,7 +30,12 @@ export class HeaderComponent implements OnInit {
           {
             label: 'Dashboard',
             icon: 'pi pi-chart-line',
-            routerLink: "/"
+            routerLink: "/navigation",
+          },
+          {
+            label: 'Usuarios',
+            icon: 'pi pi-user-edit',
+            routerLink: "/navigation/users"
           },
 
         ]
@@ -46,5 +52,7 @@ export class HeaderComponent implements OnInit {
         ]
       }
     ]
+
   }
 }
+

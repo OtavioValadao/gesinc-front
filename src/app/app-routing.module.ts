@@ -1,11 +1,23 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
-import { DashboardComponent } from './navigation/dashboard/dashboard.component';
 import { CreateAccountComponent } from './account/create-account/create-account.component';
 import { LoginComponent } from './account/login/login.component';
 
 
 const routes: Routes = [
+  {
+    path: '',
+      redirectTo: 'navigation',
+      pathMatch: 'full'
+  },
+  {
+    path: 'navigation',
+    loadChildren: () => import('./navigation/navigation-routing.module').then(o => o.NavigationRoutingModule)
+  },
+  {
+    path: 'incidents',
+    loadChildren: () => import('./incidents/incidents-routing.module').then(o => o.IncidentsRoutingModule)
+  },
   {
     path: 'login',
     component: LoginComponent,
@@ -14,10 +26,8 @@ const routes: Routes = [
     path: 'create-account',
     component: CreateAccountComponent,
   },
-  {
-    path: '',
-    component: DashboardComponent,
-  },
+
+
 ];
 
 @NgModule({
